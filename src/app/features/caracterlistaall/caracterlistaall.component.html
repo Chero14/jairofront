@@ -1,0 +1,46 @@
+<div class="container mt-5">
+    <h2 class="mb-4">Lista Completa de Personajes</h2>
+  
+    <!-- Mensaje de carga -->
+    <div *ngIf="isLoading" class="text-center">
+      <p>Cargando personajes...</p>
+    </div>
+  
+    <!-- Mensaje de error -->
+    <div *ngIf="errorMessage" class="text-danger text-center">
+      <p>{{ errorMessage }}</p>
+    </div>
+    <button class="btn btn-primary mb-3" (click)="goBack()">Volver al Menú Principal</button>
+    <!-- Tabla de personajes -->
+    <table *ngIf="characters.length > 0" class="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Imagen</th>
+          <th>Nombre</th>
+          <th>Estado</th>
+          <th>Especie</th>
+          <th>Género</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let character of characters">
+          <td>{{ character.id }}</td>
+          <td>
+            <img
+              [src]="character.image"
+              alt="{{ character.name }}"
+              style="width: 50px; height: 50px; object-fit: cover;"
+            />
+          </td>
+          <td>{{ character.name }}</td>
+          <td [class.text-success]="character.status === 'Alive'" [class.text-danger]="character.status === 'Dead'">
+            {{ character.status }}
+          </td>
+          <td>{{ character.species }}</td>
+          <td>{{ character.gender }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

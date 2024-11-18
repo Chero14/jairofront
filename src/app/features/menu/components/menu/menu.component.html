@@ -1,0 +1,42 @@
+<!-- Navbar principal -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Menú Principal</a>
+  </div>
+</nav>
+
+<!-- Contenedor principal -->
+<div class="container mt-4">
+  <!-- Introducción a la API -->
+  <div class="card shadow mb-4">
+    <div class="card-header bg-info text-white">
+      <h4>Introducción a la API Rick and Morty</h4>
+    </div>
+    <div class="card-body">
+      <p class="card-text">
+        Esta aplicación utiliza la API REST de Rick and Morty para mostrar información sobre personajes, episodios y ubicaciones de la popular serie. Puedes realizar las siguientes acciones:
+      </p>
+      <ul>
+        <li>**Consultar por ID**: Busca detalles de un personaje en específico por su identificador único.</li>
+        <li>**Filtrar personajes**: Usa filtros como nombre, estado o especie para buscar personajes.</li>
+        <li>**Listar todos los personajes**: Obtén una lista completa de todos los personajes.</li>
+      </ul>
+      <p class="card-text">¡Explora las funciones disponibles en el menú a continuación!</p>
+    </div>
+  </div>
+
+  <!-- Tarjeta con opciones del menú -->
+  <div class="card shadow">
+    <div class="card-header bg-dark text-white">
+      <h4>Bienvenido, Admin</h4>
+    </div>
+    <div class="card-body">
+      <p class="card-text">Selecciona una opción del menú para comenzar:</p>
+      <div class="d-grid gap-2">
+        <button class="btn btn-primary btn-lg" (click)="fetchById()">Consultar por ID</button>
+        <button class="btn btn-secondary btn-lg" (click)="filterCharacters()">Filtrar Personajes</button>
+        <button class="btn btn-success btn-lg" (click)="listAllCharacters()">Listar Todos los Personajes</button>
+      </div>
+    </div>
+  </div>
+</div>
